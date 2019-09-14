@@ -6,4 +6,5 @@ const server = new Server()
 
 server.get('/ping', () =>  new Response(200, 'OK'))
 server.get('/', () => new Response(200, fs.readFileSync('./index.html'), 'html'))
+server.post('/ping', (params) => new Response(500, params))
 server.listen()
